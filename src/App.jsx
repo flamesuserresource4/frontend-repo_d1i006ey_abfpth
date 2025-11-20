@@ -1,71 +1,40 @@
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import CaseCarousel from './components/CaseCarousel'
+import HowItWorks from './components/HowItWorks'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
-        </div>
+    <div className="min-h-screen bg-slate-950">
+      {/* Subtle starfield + gradient backdrop */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_10%_-20%,rgba(59,130,246,0.20),transparent),radial-gradient(800px_400px_at_110%_10%,rgba(34,211,238,0.18),transparent)]" />
+        <div className="absolute inset-0 opacity-[0.15]" style={{backgroundImage:'url(data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' opacity=\'0.3\'><defs><radialGradient id=\'g\'><stop offset=\'0%\' stop-color=\'white\'/><stop offset=\'100%\' stop-color=\'transparent\'/></radialGradient></defs><circle cx=\'10\' cy=\'20\' r=\'0.7\' fill=\'url(%23g)\'/><circle cx=\'40\' cy=\'70\' r=\'0.6\' fill=\'url(%23g)\'/><circle cx=\'80\' cy=\'30\' r=\'0.5\' fill=\'url(%23g)\'/><circle cx=\'60\' cy=\'90\' r=\'0.6\' fill=\'url(%23g)\'/></svg>)', backgroundSize:'600px 600px', backgroundRepeat:'repeat'}}></div>
       </div>
+
+      <Navbar />
+      <Hero />
+      <CaseCarousel />
+      <HowItWorks />
+
+      <footer className="relative">
+        <div className="mx-auto max-w-7xl px-6 py-12">
+          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <p className="text-white font-medium">Play responsibly</p>
+              <p className="text-white/60 text-sm">This is a design concept inspired by CS2 case opening platforms.</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <a href="#" className="text-white/70 hover:text-white text-sm">Terms</a>
+              <span className="text-white/20">•</span>
+              <a href="#" className="text-white/70 hover:text-white text-sm">Privacy</a>
+              <span className="text-white/20">•</span>
+              <a href="#" className="text-white/70 hover:text-white text-sm">Support</a>
+            </div>
+          </div>
+          <p className="text-center text-white/50 text-xs mt-6">© {new Date().getFullYear()} CaseCraft — Modern, minimalist 3D design with glassmorphism</p>
+        </div>
+      </footer>
     </div>
   )
 }
